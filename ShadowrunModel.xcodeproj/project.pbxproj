@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32DFD5E9B0127AD47759C778 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 32DFD71EC48DE8356E65EBDD /* LICENSE */; };
 		9EDFBAE71E6EE5BC008F165C /* ShadowrunModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDFBADD1E6EE5BC008F165C /* ShadowrunModel.framework */; };
 		9EDFBAEC1E6EE5BC008F165C /* ShadowrunModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAEB1E6EE5BC008F165C /* ShadowrunModelTests.swift */; };
 		9EDFBAEE1E6EE5BC008F165C /* ShadowrunModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32DFD71EC48DE8356E65EBDD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9EDFBADD1E6EE5BC008F165C /* ShadowrunModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShadowrunModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowrunModel.h; sourceTree = "<group>"; };
 		9EDFBAE11E6EE5BC008F165C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				9EDFBAE11E6EE5BC008F165C /* Info.plist */,
 				9EDFBAF91E6EEDAB008F165C /* Character.swift */,
 				9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */,
+				32DFD71EC48DE8356E65EBDD /* LICENSE */,
 			);
 			path = ShadowrunModel;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DFD5E9B0127AD47759C778 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
