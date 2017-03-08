@@ -33,9 +33,9 @@ struct Shadowrunner: Equatable {
    private var _modifiers: [CharacteristicInfo: [Modifier]]
    private var _attributes: [BaseAttributeInfo: Characteristic<BaseAttributeInfo>]
    
-   init(name: String) {
+   init(named: String) {
       
-      self._name = name
+      self._name = named
       self._modifiers = [CharacteristicInfo: [Modifier]]()
       self._attributes = [BaseAttributeInfo: Characteristic]()
       
