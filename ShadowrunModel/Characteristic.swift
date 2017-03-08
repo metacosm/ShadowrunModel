@@ -43,6 +43,15 @@ struct Characteristic<T: CharacteristicInfo> {
       get {
          return info.baseValue(for: character, with: value)
       }
+      set {}
+   }
+
+   var modifiedValue: DicePool {
+      return info.modifiedValue(for: character, with: value)
+   }
+
+   var dicePool: DicePool {
+      return info.dicePool(for: character, with: value)
    }
 }
 
@@ -143,7 +152,23 @@ class CharacteristicInfo: Hashable, CustomDebugStringConvertible, Comparable {
    }
    
    func baseValue(for character: Character, with value: DicePool?) -> DicePool {
-      return 0
+      return value ?? 0
+   }
+
+
+   func modifiedValue(for character: Character, with value: DicePool?) -> DicePool {
+      let baseValue = self.baseValue(for: character, with: value)
+
+      guard let modifiers = character.modifiers(for: self) else {
+         return baseValue
+      }
+
+      let result = modifiers.reduce(baseValue, { result, modifier in result + modifier.modifier })
+      return result
+   }
+
+   func dicePool(for character: Character, with value: DicePool?) -> DicePool {
+      return modifiedValue(for: character, with: value)
    }
 }
 
@@ -163,10 +188,6 @@ class SimpleAttributeInfo: BaseAttributeInfo {
    
    override var initialValue: DicePool {
       return _initialValue
-   }
-   
-   override func baseValue(for character: Character, with value: DicePool?) -> DicePool {
-      return value ?? 0
    }
 }
 
@@ -200,6 +221,10 @@ class DerivedAttributeInfo: BaseAttributeInfo {
    override func baseValue(for character: Character, with value: DicePool?) -> DicePool {
       return character.attribute(first).baseValue + character.attribute(second).baseValue
    }
+
+   override func modifiedValue(for character: Character, with value: DicePool?) -> DicePool {
+      return character.attribute(first).modifiedValue + character.attribute(second).modifiedValue
+   }
 }
 
 class BaseSkillInfo: CharacteristicInfo {
@@ -220,7 +245,7 @@ class BaseSkillInfo: CharacteristicInfo {
       return _canDefault
    }
    
-   override func baseValue(for character: Character, with value: DicePool?) -> DicePool {
-      return value ?? 0 + character.attribute(linkedAttribute).baseValue
+   override func dicePool(for character: Character, with value: DicePool?) -> DicePool {
+      return modifiedValue(for: character, with: value) + character.attribute(linkedAttribute).dicePool
    }
 }

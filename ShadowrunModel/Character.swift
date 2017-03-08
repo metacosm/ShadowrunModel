@@ -42,7 +42,10 @@ struct Character: Equatable {
       let info = SimpleAttributeInfo(name: "foo", description: "foo")
       _attributes[info] = Characteristic(named: info, for: self)
    }
-   
+
+   func modifiers(for info: CharacteristicInfo) -> [Modifier]? {
+      return _modifiers[info]
+   }
    
    func attribute(_ info: BaseAttributeInfo) -> Characteristic<BaseAttributeInfo> {
       guard let attribute = _attributes[info] else {
