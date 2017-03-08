@@ -31,13 +31,13 @@ struct Shadowrunner: Equatable {
    private var _realName: String?
    private let _name: String
    private var _modifiers: [CharacteristicInfo: [Modifier]]
-   private var _attributes: [BaseAttributeInfo: Characteristic<BaseAttributeInfo>]
+   private var _attributes: [AttributeInfo: Characteristic<AttributeInfo>]
    
    init(named: String) {
       
       self._name = named
       self._modifiers = [CharacteristicInfo: [Modifier]]()
-      self._attributes = [BaseAttributeInfo: Characteristic]()
+      self._attributes = [AttributeInfo: Characteristic]()
       
       let info = SimpleAttributeInfo(name: "foo", description: "foo")
       _attributes[info] = Characteristic(named: info, for: self)
@@ -47,7 +47,7 @@ struct Shadowrunner: Equatable {
       return _modifiers[info]
    }
    
-   func attribute(_ info: BaseAttributeInfo) -> Characteristic<BaseAttributeInfo> {
+   func attribute(_ info: AttributeInfo) -> Characteristic<AttributeInfo> {
       guard let attribute = _attributes[info] else {
          let info = SimpleAttributeInfo(name: info.name, description: info.description, group: info.group, initialValue: info.initialValue)
          return Characteristic(named: info, for: self, with: info.initialValue)

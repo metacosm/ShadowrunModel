@@ -172,13 +172,13 @@ class CharacteristicInfo: Hashable, CustomDebugStringConvertible, Comparable {
    }
 }
 
-class BaseAttributeInfo: CharacteristicInfo {
+class AttributeInfo: CharacteristicInfo {
    var isDerived: Bool {
       return false
    }
 }
 
-class SimpleAttributeInfo: BaseAttributeInfo {
+class SimpleAttributeInfo: AttributeInfo {
    private let _initialValue: DicePool
    
    init(name: String, description: String, group: CharacteristicGroup = .physical, initialValue: DicePool = 0) {
@@ -191,11 +191,11 @@ class SimpleAttributeInfo: BaseAttributeInfo {
    }
 }
 
-class DerivedAttributeInfo: BaseAttributeInfo {
-   private let _first: BaseAttributeInfo
-   private let _second: BaseAttributeInfo
+class DerivedAttributeInfo: AttributeInfo {
+   private let _first: AttributeInfo
+   private let _second: AttributeInfo
    
-   init(name: String, description: String, group: CharacteristicGroup = .physical, first: BaseAttributeInfo, second: BaseAttributeInfo) {
+   init(name: String, description: String, group: CharacteristicGroup = .physical, first: AttributeInfo, second: AttributeInfo) {
       _first = first
       _second = second
       
@@ -210,11 +210,11 @@ class DerivedAttributeInfo: BaseAttributeInfo {
       return first.initialValue + second.initialValue
    }
    
-   var first: BaseAttributeInfo {
+   var first: AttributeInfo {
       return _first
    }
    
-   var second: BaseAttributeInfo {
+   var second: AttributeInfo {
       return _second
    }
    
@@ -227,17 +227,17 @@ class DerivedAttributeInfo: BaseAttributeInfo {
    }
 }
 
-class BaseSkillInfo: CharacteristicInfo {
-   private let _attribute: BaseAttributeInfo
+class SkillInfo: CharacteristicInfo {
+   private let _attribute: AttributeInfo
    private let _canDefault: Bool
    
-   init(name: String, description: String, group: CharacteristicGroup = .physical, linkedAttribute: BaseAttributeInfo, canDefault: Bool = true) {
+   init(name: String, description: String, group: CharacteristicGroup = .physical, linkedAttribute: AttributeInfo, canDefault: Bool = true) {
       _attribute = linkedAttribute
       _canDefault = canDefault
       super.init(name: name, description: description, group: group)
    }
    
-   var linkedAttribute: BaseAttributeInfo {
+   var linkedAttribute: AttributeInfo {
       return _attribute
    }
    
