@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  Shadowrunner.swift
 //  ShadowrunModel
 //
 //  Created by Christophe Laprun on 07/03/2017.
@@ -27,7 +27,7 @@ struct Modifier {
    }
 }
 
-struct Character: Equatable {
+struct Shadowrunner: Equatable {
    private var _realName: String?
    private let _name: String
    private var _modifiers: [CharacteristicInfo: [Modifier]]
@@ -60,7 +60,7 @@ struct Character: Equatable {
       return _name
    }
 
-   static func ==(lhs: Character, rhs: Character) -> Bool {
+   static func ==(lhs: Shadowrunner, rhs: Shadowrunner) -> Bool {
       return lhs.name == rhs.name
    }
 }

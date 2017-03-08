@@ -12,16 +12,16 @@ public typealias DicePool = UInt
 
 
 struct Characteristic<T: CharacteristicInfo> {
-   private let _character: Character
+   private let _character: Shadowrunner
    private let _info: T
    private var _value: DicePool?
    
-   init(named info: T, for character: Character, with value: DicePool = 0) {
+   init(named info: T, for character: Shadowrunner, with value: DicePool = 0) {
       self.init(named: info, for: character)
       _value = value
    }
    
-   init(named info: T, for character: Character) {
+   init(named info: T, for character: Shadowrunner) {
       _info = info
       _character = character
       _value = nil
@@ -31,7 +31,7 @@ struct Characteristic<T: CharacteristicInfo> {
       return _info
    }
    
-   var character: Character {
+   var character: Shadowrunner {
       return _character
    }
    
@@ -151,12 +151,12 @@ class CharacteristicInfo: Hashable, CustomDebugStringConvertible, Comparable {
       return lhs.group == rhs.group && lhs.name == rhs.name
    }
    
-   func baseValue(for character: Character, with value: DicePool?) -> DicePool {
+   func baseValue(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       return value ?? 0
    }
 
 
-   func modifiedValue(for character: Character, with value: DicePool?) -> DicePool {
+   func modifiedValue(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       let baseValue = self.baseValue(for: character, with: value)
 
       guard let modifiers = character.modifiers(for: self) else {
@@ -167,7 +167,7 @@ class CharacteristicInfo: Hashable, CustomDebugStringConvertible, Comparable {
       return result
    }
 
-   func dicePool(for character: Character, with value: DicePool?) -> DicePool {
+   func dicePool(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       return modifiedValue(for: character, with: value)
    }
 }
@@ -218,11 +218,11 @@ class DerivedAttributeInfo: BaseAttributeInfo {
       return _second
    }
    
-   override func baseValue(for character: Character, with value: DicePool?) -> DicePool {
+   override func baseValue(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       return character.attribute(first).baseValue + character.attribute(second).baseValue
    }
 
-   override func modifiedValue(for character: Character, with value: DicePool?) -> DicePool {
+   override func modifiedValue(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       return character.attribute(first).modifiedValue + character.attribute(second).modifiedValue
    }
 }
@@ -245,7 +245,7 @@ class BaseSkillInfo: CharacteristicInfo {
       return _canDefault
    }
    
-   override func dicePool(for character: Character, with value: DicePool?) -> DicePool {
+   override func dicePool(for character: Shadowrunner, with value: DicePool?) -> DicePool {
       return modifiedValue(for: character, with: value) + character.attribute(linkedAttribute).dicePool
    }
 }

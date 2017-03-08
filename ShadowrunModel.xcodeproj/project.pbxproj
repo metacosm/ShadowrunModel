@@ -11,7 +11,7 @@
 		9EDFBAE71E6EE5BC008F165C /* ShadowrunModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDFBADD1E6EE5BC008F165C /* ShadowrunModel.framework */; };
 		9EDFBAEC1E6EE5BC008F165C /* ShadowrunModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAEB1E6EE5BC008F165C /* ShadowrunModelTests.swift */; };
 		9EDFBAEE1E6EE5BC008F165C /* ShadowrunModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EDFBAFA1E6EEDAB008F165C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAF91E6EEDAB008F165C /* Character.swift */; };
+		9EDFBAFA1E6EEDAB008F165C /* Shadowrunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAF91E6EEDAB008F165C /* Shadowrunner.swift */; };
 		9EDFBAFC1E6EEDFC008F165C /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,7 @@
 		9EDFBAE61E6EE5BC008F165C /* ShadowrunModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadowrunModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDFBAEB1E6EE5BC008F165C /* ShadowrunModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowrunModelTests.swift; sourceTree = "<group>"; };
 		9EDFBAED1E6EE5BC008F165C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EDFBAF91E6EEDAB008F165C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		9EDFBAF91E6EEDAB008F165C /* Shadowrunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadowrunner.swift; sourceTree = "<group>"; };
 		9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 			children = (
 				9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */,
 				9EDFBAE11E6EE5BC008F165C /* Info.plist */,
-				9EDFBAF91E6EEDAB008F165C /* Character.swift */,
+				9EDFBAF91E6EEDAB008F165C /* Shadowrunner.swift */,
 				9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */,
 				32DFD71EC48DE8356E65EBDD /* LICENSE */,
 			);
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EDFBAFC1E6EEDFC008F165C /* Characteristic.swift in Sources */,
-				9EDFBAFA1E6EEDAB008F165C /* Character.swift in Sources */,
+				9EDFBAFA1E6EEDAB008F165C /* Shadowrunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
