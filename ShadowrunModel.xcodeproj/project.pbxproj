@@ -10,6 +10,8 @@
 		9EDFBAE71E6EE5BC008F165C /* ShadowrunModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDFBADD1E6EE5BC008F165C /* ShadowrunModel.framework */; };
 		9EDFBAEC1E6EE5BC008F165C /* ShadowrunModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAEB1E6EE5BC008F165C /* ShadowrunModelTests.swift */; };
 		9EDFBAEE1E6EE5BC008F165C /* ShadowrunModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EDFBAFA1E6EEDAB008F165C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAF91E6EEDAB008F165C /* Character.swift */; };
+		9EDFBAFC1E6EEDFC008F165C /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		9EDFBAE61E6EE5BC008F165C /* ShadowrunModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadowrunModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDFBAEB1E6EE5BC008F165C /* ShadowrunModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowrunModelTests.swift; sourceTree = "<group>"; };
 		9EDFBAED1E6EE5BC008F165C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EDFBAF91E6EEDAB008F165C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				9EDFBAE01E6EE5BC008F165C /* ShadowrunModel.h */,
 				9EDFBAE11E6EE5BC008F165C /* Info.plist */,
+				9EDFBAF91E6EEDAB008F165C /* Character.swift */,
+				9EDFBAFB1E6EEDFC008F165C /* Characteristic.swift */,
 			);
 			path = ShadowrunModel;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 					9EDFBADC1E6EE5BC008F165C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = GR42KQ2SX9;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					9EDFBAE51E6EE5BC008F165C = {
@@ -198,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDFBAFC1E6EEDFC008F165C /* Characteristic.swift in Sources */,
+				9EDFBAFA1E6EEDAB008F165C /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +331,7 @@
 		9EDFBAF21E6EE5BC008F165C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GR42KQ2SX9;
@@ -334,6 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.metacosm.ShadowrunModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +352,7 @@
 		9EDFBAF31E6EE5BC008F165C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GR42KQ2SX9;
@@ -360,6 +372,7 @@
 		9EDFBAF51E6EE5BC008F165C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GR42KQ2SX9;
 				INFOPLIST_FILE = ShadowrunModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +385,7 @@
 		9EDFBAF61E6EE5BC008F165C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GR42KQ2SX9;
 				INFOPLIST_FILE = ShadowrunModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
